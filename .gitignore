@@ -1,0 +1,10 @@
+*.o
+*.mod
+
+*.so
+*.a
+
+*.pdf
+
+pthread_gfort/*
+pthread_ifort/*

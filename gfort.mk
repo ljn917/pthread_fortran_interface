@@ -1,0 +1,19 @@
+#CC = icc
+CC = gcc
+#CC = clang
+#FC = ifort
+FC = gfortran
+AR = ar
+PLATFORM = #-D__DARWIN
+INCLUDE = -I${CURDIR}/src
+PTHREAD_CFLAG = -pthread
+PTHREAD_FFLAG = -pthread
+CFLAGS = $(PLATFORM) $(INCLUDE) -fPIC -Wimplicit-function-declaration $(PTHREAD_CFLAG)
+FFLAGS = $(PLATFORM) $(INCLUDE) -cpp -fPIC -frecursive -fimplicit-none $(PTHREAD_FFLAG)
+LIB = 
+OPTFLAGS = -Ofast
+DEBUG = $(OPTFLAGS) -g # -rdynamic -fbacktrace -Og -fcheck=all 
+#CDEBUG = $(DEBUG)  -I/usr/include/x86_64-linux-gnu/
+CDEBUG = $(DEBUG)  
+FDEBUG = $(DEBUG)
+OUTPUT_DIR = ${CURDIR}/pthread_gfort

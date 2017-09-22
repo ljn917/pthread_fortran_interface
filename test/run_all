@@ -1,0 +1,11 @@
+#!/bin/bash
+
+set -e
+
+me=$(basename "$0")
+
+for i in $(ls *);do
+    if [ "$me" != "$i" ]; then
+        ./$i
+    fi
+done
